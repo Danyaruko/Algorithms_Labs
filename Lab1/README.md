@@ -30,7 +30,7 @@ Visual presentation
 ### How to run
 
 - `cd` into folder where you want to store this repository
-- Clone this repository with command `git clone https://github.com/max-dmytryshyn/Algorithms-Labs.git`
+- Clone this repository with command `git clone https://github.com/Danyaruko/Algorithms-Labs.git`
 - Choose branch lab_1 with command `git checkout lab_1`
 - Go into folder with files with command `cd Algorithms-Labs`
 - run command `python3 heap_sort_run.py {sort order: asc or desc} {comma separated array: 1,2,3 for example}` on Mac/Linux
