@@ -12,7 +12,7 @@ def is_possible_to_place(aggressive_cows_number, sorted_stables, min_distance):
     return False
 
 
-def find_answer(aggressive_cows_number, sorted_stable, possible_answers):
+def find_max_min_distance(aggressive_cows_number, sorted_stable, possible_answers):
     if len(possible_answers) == 0:
         return 0
 
@@ -22,18 +22,23 @@ def find_answer(aggressive_cows_number, sorted_stable, possible_answers):
     current_answer = possible_answers[len(possible_answers) // 2]
 
     if is_possible_to_place(aggressive_cows_number, sorted_stable, current_answer):
-        return find_answer(aggressive_cows_number, sorted_stable, possible_answers[len(possible_answers) // 2:])
+        next_step = find_max_min_distance(aggressive_cows_number, sorted_stable,
+                                          possible_answers[len(possible_answers) // 2:])
     else:
-        return find_answer(aggressive_cows_number, sorted_stable, possible_answers[:len(possible_answers) // 2])
+        next_step = find_max_min_distance(
+            aggressive_cows_number, sorted_stable, possible_answers[:len(possible_answers) // 2])
+    return next_step
 
 
 def solve_farm(cows_number, aggressive_cows_number, stables):
+    if len(stables) != cows_number:
+        return "Number of cows doesn't match number of free stables"
     stables.sort()
 
     max_possible_answer = (
         stables[-1] - stables[0]) // (aggressive_cows_number - 1)
     possible_answers = [i for i in range(max_possible_answer + 1)]
-    return find_answer(aggressive_cows_number, stables, possible_answers)
+    return find_max_min_distance(aggressive_cows_number, stables, possible_answers)
 
 
 if __name__ == "__main__":

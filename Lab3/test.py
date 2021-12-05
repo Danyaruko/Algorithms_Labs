@@ -16,6 +16,10 @@ class TestFarm(unittest.TestCase):
         self.aggressive_cows_number_3 = 3
         self.stables_3 = [1, 2, 7, 5, 11, 12]
 
+        self.cows_number_4 = 6
+        self.aggressive_cows_number_4 = 3
+        self.stables_4 = [1, 2, 7, 5, 11, 12, 15]
+
     def test_1(self):
         self.assertEqual(solve_farm(self.cows_number_1,
                          self.aggressive_cows_number_1, self.stables_1), 2)
@@ -27,3 +31,7 @@ class TestFarm(unittest.TestCase):
     def test_3(self):
         self.assertEqual(solve_farm(self.cows_number_3,
                          self.aggressive_cows_number_3, self.stables_3), 5)
+
+    def test_4(self):
+        self.assertEqual(solve_farm(self.cows_number_4,
+                         self.aggressive_cows_number_4, self.stables_4), "Number of cows doesn't match number of free stables")
