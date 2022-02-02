@@ -7,7 +7,7 @@ class Graph:
         self.edges.append(edge)
 
     def kruskals_algorithm(self):
-        self.edges.sort(key=lambda item: item[2])
+        self.edges.sort(key=lambda edge: edge[2])
         print(self.edges)
         min_spanning_tree = list()
         min_spanning_tree_vertices = set()
