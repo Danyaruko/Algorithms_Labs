@@ -30,7 +30,7 @@ Output file wchain.out contains only one integer - the maximum word chain length
 ## Algorithm
 
 Since head-on formation of word chains is quite complex, we create a dictionary instead where each word from
-vocabulary has an integer as a value that represents word's index in a word chain, and then iterate through the vocabulary, deriving new words and seeing whether they are on the list. If they actually are, the index of current word changes to index of the new one plus one, if it is greater than the current index. In the end, the highest index would be the length of the longest word chain.
+vocabulary has an integer as a value that represents maximum length of a word chain that starts with this word(max len further), and then iterate through the vocabulary, deriving new words and seeing whether they are on the list. If they actually are, the max len of current word changes to max len of the new one plus one, if it is greater than the current max len. In the end, the highest max len would be the length of the longest word chain.
 
 <b>Complexity = O(N \* L)</b>, where L - length of the longest word
 
