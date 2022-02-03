@@ -27,6 +27,6 @@ def kmp_algorithm(string, substring):
     return kmp_res
 
 
-test_string = "ABABABCABABACBCABABABC"
-test_substring = "ABABAC"
+test_string = "ABABDABACDABABCABAB"
+test_substring = "ABABCABAB"
 print(kmp_algorithm(test_string, test_substring))
